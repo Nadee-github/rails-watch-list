@@ -1,0 +1,27 @@
+<div class="navbar-lewagon">
+  <%= image_tag "reel.png", alt: "Movies"%>
+  <div class="links">
+    <%= link_to "List", lists_path%>
+    <%= link_to "Add a movie", list_bookmarks_new_path(@list)%>
+  </div>
+</div>
+
+<div class="container">
+  <h1 class="display-3"><%= @list.name %></h1>
+
+<div class="cards-container">
+  <% @list.movies.each do |movie|%>
+    <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src=<%= movie.poster_url %> alt="Card image cap">
+      <div class="card-body">
+          <p class="card-text"><%= movie.overview %></p>
+          <p><strong>Reviews</strong></p>
+            <% movie.bookmarks.each do |bm|%>
+              <p><%= bm.comment %>  <%= link_to "Delete", "/lists/#{@list.id}/bookmarks/#{bm.id}" ,data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"btn btn-primary"%><p/>
+            <% end  %>
+      </div>
+    </div>
+  <% end  %>
+</div>
+
+</div>

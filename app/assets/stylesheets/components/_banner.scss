@@ -1,0 +1,17 @@
+.bannerImg {
+  background-image: asset-url("banner.jpg");
+  background-size: cover;
+  height: 560px;
+  width: 100%;
+  display: flex;
+}
+.header-title{
+  justify-content: center;
+  vertical-align: baseline;
+  color: white;
+  height: 100px;
+  margin: 250px;
+  h1{
+    font-weight: bold;
+  }
+}

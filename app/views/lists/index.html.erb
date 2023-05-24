@@ -1,0 +1,15 @@
+<%= render "navbar", list: @list %>
+
+<div class="bannerImg">
+  <div class="header-title">
+    <h1>Let's explore Movies</h1>
+  </div>
+</div>
+
+<div class="cards-container">
+  <% @lists.each do |list|%>
+    <div class="card" style="width: 18rem;">
+      <p class="card-text"><%= link_to list.name, list_path(list) %></p>
+    </div>
+  <% end  %>
+</div>
